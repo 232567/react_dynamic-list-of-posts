@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { CommentData } from '../types/Comment';
@@ -196,4 +197,8 @@ export const NewCommentForm: React.FC<Props> = ({ onSubmit }) => {
       </div>
     </form>
   );
+};
+
+NewCommentForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

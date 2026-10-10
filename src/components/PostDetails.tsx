@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Post } from '../types/Post';
 import { Comment, CommentData } from '../types/Comment';
@@ -135,4 +136,13 @@ export const PostDetails: React.FC<Props> = ({ post }) => {
       {isFormVisible && <NewCommentForm onSubmit={handleAddComment} />}
     </div>
   );
+};
+
+PostDetails.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+  }).isRequired,
 };

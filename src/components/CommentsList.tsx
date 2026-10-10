@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Comment } from '../types/Comment';
 
@@ -33,3 +34,16 @@ export const CommentsList: React.FC<Props> = ({ comments, onDelete }) => (
     ))}
   </>
 );
+
+CommentsList.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      postId: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
