@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Post } from '../types/Post';
+import { Comment, CommentData } from '../types/Comment';
 import {
   createComment,
   deleteComment,
